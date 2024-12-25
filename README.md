@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Mini ERP System for Product and Sales Order Management
+======================================================
 
-## Getting Started
+Overview
+--------
 
-First, run the development server:
+This project is a **Mini ERP System** designed for managing products and sales orders. It includes functionality for inventory management, order processing, and reporting. The application is built using modern web technologies, providing a robust, scalable, and user-friendly interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Scripts
+-------
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   npm run dev: Starts the development server.
+*   npm run build: Builds the application for production.
+*   npm run start: Starts the production server.
+*   npx prisma studio: Opens Prisma Studio for database inspection.
+    
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Features
+--------
 
-## Learn More
+### Product Management
 
-To learn more about Next.js, take a look at the following resources:
+*   Add, edit, and delete products.
+*   View a paginated list of all products.
+*   Track product inventory with low-stock alerts.
+    
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Sales Order Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*   Create sales orders with multiple products and quantities.
+*   Update sales order statuses (pending, completed, cancelled).
+*   View detailed sales orders along with their items.
+    
 
-## Deploy on Vercel
+### Reporting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   Sales summary report showing:    
+    *   Total orders, revenue, and sales by status.
+    *   Top 5 selling products (by quantity and revenue).
+            
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Additional Features
+
+*   Interactive dashboards with visualizations.
+*   RESTful API routes for managing products, sales orders, and reports.
+    
+
+Tech Stack
+----------
+
+*   **Frontend**: React 19, Tailwind CSS
+*   **Backend**: Next.js (App Router)
+*   **Database**: PostgreSQL
+*   **ORM**: Prisma
+*   **Charts and Visualizations**: Recharts
+    
+
+Installation
+------------
+
+### Prerequisites
+
+*   Node.js (>=16.x)
+*   PostgreSQL (>=12.x)
+*   A package manager (npm or yarn)
+
+### Steps
+
+1.  bashCopy codegit clone cd mini-erp-system
+2.  bashCopy codenpm install
+3.  envCopy codeDATABASE\_URL=postgresql://:@:/
+4.  bashCopy codenpx prisma migrate devnpx prisma generate
+5.  bashCopy codenpm run devThe application will be available at http://localhost:3000.
+    
+
+API Endpoints
+-------------
+
+### Product APIs
+
+*   GET /api/products: Fetch all products (paginated).
+*   GET /api/products/\[id\]: Fetch a single product by ID.
+*   POST /api/products: Create a new product.
+*   PUT /api/products/\[id\]: Update a product by ID.
+*   DELETE /api/products/\[id\]: Delete a product by ID.
+    
+
+### Sales Order APIs
+
+*   GET /api/sales-orders: Fetch all sales orders (paginated).
+*   GET /api/sales-orders/\[id\]: Fetch a sales order by ID with its items.
+*   POST /api/sales-orders: Create a new sales order.
+*   PUT /api/sales-orders/\[id\]: Update the status of a sales order by ID.
+    
+
+### Reporting APIs
+
+*   GET /api/reports/sales-summary: Fetch sales summary report.
+*   GET /api/reports/top-selling-products: Fetch the top 5 selling products by quantity.
+    
+
+Key Pages
+---------
+
+### Dashboard
+
+*   Displays key metrics, recent activity, and sales trends.
+    
+
+### Product Pages
+
+*   **List Page**: Paginated table of products with search functionality.
+*   **Detail Page**: Detailed view of a single product.
+*   **Creation/Edit Form**: Form to add or update product information.
+    
+
+### Sales Order Pages
+
+*   **List Page**: Paginated table of sales orders with filters.
+*   **Detail Page**: View order details, including items and status.
+*   **Creation Form**: Create a new sales order with product selection.
+    
+
+### Sales Summary
+
+*   Visualization of total sales, order statuses, and top-selling products.
+    
+### Project Summary
+This project is a Mini ERP System for Product and Sales Order Management, developed as part of an assignment for a small project from IMax Technologies Private Limited. The goal of this assignment was to demonstrate the ability to design and implement a robust, scalable system for managing inventory, processing sales orders, and generating reports using modern web technologies like Next.js, Prisma, PostgreSQL, and Tailwind CSS.
+
+This project showcases essential features of an ERP system, including CRUD operations, reporting, and data visualization, and serves as a foundational example of efficient system design and implementation.
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+// schema.prisma
+
+model Product {
+  id            String        @id @default(uuid()) @db.Uuid // Ensure it's defined as UUID
+  name          String
+  description   String?
+  price         Decimal       @db.Decimal
+  quantity      Int
+  created_at    DateTime      @default(now())
+  updated_at    DateTime      @updatedAt
+
+  orderItems    SalesOrderItem[]  // Renamed to orderItems
+}
+
+model SalesOrder {
+  id            String            @id @default(uuid()) @db.Uuid
+  order_date    DateTime
+  customer_name String
+  total_amount  Decimal           @db.Decimal
+  status        OrderStatus
+  created_at    DateTime          @default(now())
+  updated_at    DateTime          @updatedAt
+
+  orderItems    SalesOrderItem[]  // Renamed to orderItems
+}
+
+model SalesOrderItem {
+  id            String   @id @default(uuid()) @db.Uuid
+  sales_order_id String  @db.Uuid
+  product_id    String  @db.Uuid // Ensure it's defined as UUID
+  quantity      Int
+  unit_price    Decimal @db.Decimal
+  total_price   Decimal @db.Decimal
+
+  salesOrder    SalesOrder @relation(fields: [sales_order_id], references: [id])
+  product       Product    @relation(fields: [product_id], references: [id])
+
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+
+
+enum OrderStatus {
+  pending
+  completed
+  cancelled
+}
