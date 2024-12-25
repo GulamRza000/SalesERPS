@@ -125,6 +125,12 @@ Key Pages
 ### Sales Summary
 
 *   Visualization of total sales, order statuses, and top-selling products.
+
+### Not Implemented Features
+
+* Pagination on /products and sales-orders pages
+* User Authentication
+* Not able to deploy within the given timeframe
     
 ### Project Summary
 This project is a Mini ERP System for Product and Sales Order Management, developed as part of an assignment for a small project from IMax Technologies Private Limited. The goal of this assignment was to demonstrate the ability to design and implement a robust, scalable system for managing inventory, processing sales orders, and generating reports using modern web technologies like Next.js, Prisma, PostgreSQL, and Tailwind CSS.
