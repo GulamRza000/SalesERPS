@@ -6,6 +6,68 @@ Overview
 
 This project is a **Mini ERP System** designed for managing products and sales orders. It includes functionality for inventory management, order processing, and reporting. The application is built using modern web technologies, providing a robust, scalable, and user-friendly interface.
 
+# Getting Started  
+
+Follow these steps to clone and run the project on your local machine:  
+
+## Prerequisites  
+Ensure you have the following installed on your system:  
+- **Node.js** (v16 or later)  
+- **npm** or **yarn**  
+- **PostgreSQL**  
+- **Git**  
+
+## 
+
+## Clone the Repository  
+1. Open your terminal and run the following command:  
+   ```bash
+   git clone https://github.com/GulamRza000/SalesERPS.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd RepositoryName
+
+
+3. Install Dependencies
+
+Run the following command to install all required dependencies:
+```bash
+    npm install
+```
+
+4. Configure Environment Variables
+   * Create a .env file in the root directory.
+   * Add the following environment variables:
+
+**DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+NEXTAUTH_SECRET=your_secret_key**
+
+Replace username, password, and database_name with your PostgreSQL credentials.
+
+
+5. Set Up the Database
+
+* Run Prisma migrations to set up the database schema:
+   ```bash
+   npx prisma migrate dev --name init
+
+* Seed the database (if applicable):
+   ```bash
+   npx prisma db seed
+
+
+6. Start the Development Server
+
+Run the following command to start the server:
+
+   **npm run dev**
+
+7. Additional Commands
+   * Generate Prisma Client
+     npx prisma generate
+
+
 Scripts
 -------
 
@@ -54,24 +116,6 @@ Tech Stack
 *   **Database**: PostgreSQL
 *   **ORM**: Prisma
 *   **Charts and Visualizations**: Recharts
-    
-
-Installation
-------------
-
-### Prerequisites
-
-*   Node.js (>=16.x)
-*   PostgreSQL (>=12.x)
-*   A package manager (npm or yarn)
-
-### Steps
-
-1.  bashCopy codegit clone cd mini-erp-system
-2.  bashCopy codenpm install
-3.  envCopy codeDATABASE\_URL=postgresql://:@:/
-4.  bashCopy codenpx prisma migrate devnpx prisma generate
-5.  bashCopy codenpm run devThe application will be available at http://localhost:3000.
     
 
 API Endpoints
@@ -136,9 +180,4 @@ Key Pages
 This project is a Mini ERP System for Product and Sales Order Management, developed as part of an assignment for a small project from IMax Technologies Private Limited. The goal of this assignment was to demonstrate the ability to design and implement a robust, scalable system for managing inventory, processing sales orders, and generating reports using modern web technologies like Next.js, Prisma, PostgreSQL, and Tailwind CSS.
 
 This project showcases essential features of an ERP system, including CRUD operations, reporting, and data visualization, and serves as a foundational example of efficient system design and implementation.
-
-
-
-
-
 

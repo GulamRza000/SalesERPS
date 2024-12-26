@@ -2,9 +2,11 @@
 import ProductForm from '@/app/componants/ProductForm'
 import { useSearchParams } from 'next/navigation';
 import React from 'react'
+import { Suspense } from 'react';
 
 function ProductUpdatePage() {
-  const id = useSearchParams().get('id');
+  const searchParams = useSearchParams()
+  const id = searchParams.get('id');
 
   return (
     <div>
@@ -14,4 +16,14 @@ function ProductUpdatePage() {
   )
 }
 
-export default ProductUpdatePage
+// was not able to use useSearchParams without suspense
+function page(){
+  return (
+    <Suspense>
+      <ProductUpdatePage />
+    </Suspense>
+  )
+}
+
+
+export default page
