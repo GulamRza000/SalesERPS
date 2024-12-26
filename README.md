@@ -32,7 +32,9 @@ Ensure you have the following installed on your system:
 3. Install Dependencies
 
 Run the following command to install all required dependencies:
-cd RepositoryName
+```bash
+    npm install
+```
 
 4. Configure Environment Variables
    * Create a .env file in the root directory.
@@ -114,24 +116,6 @@ Tech Stack
 *   **Database**: PostgreSQL
 *   **ORM**: Prisma
 *   **Charts and Visualizations**: Recharts
-    
-
-Installation
-------------
-
-### Prerequisites
-
-*   Node.js (>=16.x)
-*   PostgreSQL (>=12.x)
-*   A package manager (npm or yarn)
-
-### Steps
-
-1.  bashCopy codegit clone cd mini-erp-system
-2.  bashCopy codenpm install
-3.  envCopy codeDATABASE\_URL=postgresql://:@:/
-4.  bashCopy codenpx prisma migrate devnpx prisma generate
-5.  bashCopy codenpm run devThe application will be available at http://localhost:3000.
     
 
 API Endpoints
