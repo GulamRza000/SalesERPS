@@ -6,6 +6,66 @@ Overview
 
 This project is a **Mini ERP System** designed for managing products and sales orders. It includes functionality for inventory management, order processing, and reporting. The application is built using modern web technologies, providing a robust, scalable, and user-friendly interface.
 
+# Getting Started  
+
+Follow these steps to clone and run the project on your local machine:  
+
+## Prerequisites  
+Ensure you have the following installed on your system:  
+- **Node.js** (v16 or later)  
+- **npm** or **yarn**  
+- **PostgreSQL**  
+- **Git**  
+
+## 
+
+## Clone the Repository  
+1. Open your terminal and run the following command:  
+   ```bash
+   git clone https://github.com/GulamRza000/SalesERPS.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd RepositoryName
+
+
+3. Install Dependencies
+
+Run the following command to install all required dependencies:
+cd RepositoryName
+
+4. Configure Environment Variables
+   * Create a .env file in the root directory.
+   * Add the following environment variables:
+
+**DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+NEXTAUTH_SECRET=your_secret_key**
+
+Replace username, password, and database_name with your PostgreSQL credentials.
+
+
+5. Set Up the Database
+
+* Run Prisma migrations to set up the database schema:
+   ```bash
+   npx prisma migrate dev --name init
+
+* Seed the database (if applicable):
+   ```bash
+   npx prisma db seed
+
+
+6. Start the Development Server
+
+Run the following command to start the server:
+
+   **npm run dev**
+
+7. Additional Commands
+   * Generate Prisma Client
+     npx prisma generate
+
+
 Scripts
 -------
 
